@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skybox Explorer - 360° 全景預覽</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Skybox Explorer</div>
+        <div class="nav-buttons">
+            <button id="examples-btn">示例場景</button>
+            <button id="upload-btn" class="primary">上傳圖片</button>
+            <button id="help-btn">幫助</button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="upload-section">
+            <div class="drop-zone" id="drop-zone">
+                <svg class="upload-icon" viewBox="0 0 24 24">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                </svg>
+                <p>拖拽圖片到此處或點擊上傳</p>
+                <input type="file" id="file-input" accept="image/*" hidden>
+            </div>
+            <div class="examples">
+                <h3>示例場景</h3>
+                <div class="example-grid" id="example-grid">
+                    <!-- 示例場景將通過 JS 動態添加 -->
+                </div>
+            </div>
+        </div>
+
+        <div class="preview-section">
+            <div id="skybox-container"></div>
+            <div class="controls">
+                <button id="zoom-in" title="放大">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                    </svg>
+                </button>
+                <button id="zoom-out" title="縮小">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M19 13H5v-2h14v2z"/>
+                    </svg>
+                </button>
+                <button id="auto-rotate" title="自動旋轉">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/>
+                    </svg>
+                </button>
+                <button id="fullscreen" title="全屏">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
